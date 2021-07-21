@@ -22,3 +22,17 @@ when you don't want to rely on a timer.
   Methods: vTaskSuspend(), vTaskResume()
 
 - Context switching: the scheduler remembers where a task left of and all of its working variables.
+
+Task:
+- Uses a portion of Heap memory.
+- Each task has its own Stack and TCB (Task Control Block)
+- TCB: keeps vital information of the task (ej: task priority level, location of the task's stack).
+- Static tasks can be created in order to prevent memory leak (#define configSUPPORT_STATIC_ALLOCATION 1 ... xTaskCreateStatic()).
+
+
+Queue:
+FreeRTOS copies data by value, not by reference.
+Since is atomic we can expect data integrity.
+
+
+Mutex (Mutual Exclusion)
