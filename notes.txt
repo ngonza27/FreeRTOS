@@ -36,3 +36,8 @@ Since is atomic we can expect data integrity.
 
 
 Mutex (Mutual Exclusion)
+
+
+Semaphore
+Producer: adds something to the shared resource, semaphoreGive(semaphore)
+Consumer: removes something from the shared resource, semaphoreTake(mutex)
