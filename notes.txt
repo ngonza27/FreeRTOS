@@ -1,0 +1,24 @@
+Task: set of program instructions loaded in memory.
+Thread: unit of CPU utilization with its own program counter and stack.
+Process: instance of a computer program that is being executed.
+
+FreeRTOS: Task = Thread
+FreeRTOS Task: Units of cpu utilization.
+
+
+Hardware interrupt has the highest priority.
+
+
+States:
+Task Creation --> Ready  <-->  Running
+                    ^             |
+                    |             v
+                      <------  Blocked
+
+- When creating a task if task is blocked by another task it will remain at ready state.
+- Suspended state: can be transitioned from every state, tasks can not be selected to run 
+(as the block state) it can be resumed by explicitly calling vTaskResume(). Used to sleep tasks
+when you don't want to rely on a timer.
+  Methods: vTaskSuspend(), vTaskResume()
+
+- Context switching: the scheduler remembers where a task left of and all of its working variables.
