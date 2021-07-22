@@ -39,5 +39,9 @@ Mutex (Mutual Exclusion)
 
 
 Semaphore
-Producer: adds something to the shared resource, semaphoreGive(semaphore)
-Consumer: removes something from the shared resource, semaphoreTake(mutex)
+- Good for interrupt service routine
+Producer: adds something to the shared resource, xSemaphoreGive(semaphore)
+Consumer: removes something from the shared resource, xSemaphoreTake(mutex)
+                                                      uxSemaphoreGetCount()
+
+ISR - (Interrupt Service Routine)
